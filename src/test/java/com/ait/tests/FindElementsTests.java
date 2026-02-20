@@ -48,6 +48,7 @@ public class FindElementsTests {
         System.out.println(labels.size());
 
 
+
         //find list of elements
         List<WebElement> links = driver.findElements(By.tagName("a"));
         System.out.println(links.size());
