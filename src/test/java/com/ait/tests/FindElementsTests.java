@@ -120,6 +120,55 @@ public class FindElementsTests {
             WebElement element1 = driver.findElement(By.cssSelector(".search-container:nth-child(1)"));
             System.out.println(element1.getText());
         }
+    //xPath
+    @Test
+    public void findElementByXpath(){
+        //   //some_tag[@attr='value']
+        //   //*[@attr='value']
+        //   //some_tag[1]
+        //   //some_tag[text()='Title']
+
+        //driver.findElement(By.cssSelector("h1"));
+        driver.findElement(By.xpath("//h1"));
+
+        //driver.findElement(By.cssSelector("#city"));
+        driver.findElement(By.xpath("//*[@id='city']"));
+
+        //driver.findElement(By.cssSelector(".telephone"));
+        driver.findElement(By.xpath("//*[@class='telephone']"));
+
+        //driver.findElement(By.cssSelector("[for='city']"));
+        driver.findElement(By.xpath("//*[@for='city']"));
+
+        // driver.findElement(By.cssSelector("[href^='/let']"));
+        driver.findElement(By.xpath("//*[starts-with(@href,'/let')]"));
+
+        //contains text
+        //WebElement text = driver.findElement(By.xpath("//*[contains(text(),'best services')]"));
+        WebElement text = driver.findElement(By.xpath("//*[contains(.,'best services')]"));
+        System.out.println(text.getText());
+
+        //equals text
+       // WebElement element = driver.findElement(By.xpath("//*[text()='Find your car now!']"));
+        WebElement element = driver.findElement(By.xpath("//*[.='Find your car now!']"));
+        System.out.println(element.getText());
+
+        // driver.findElement(By.cssSelector("a.navigation-link[href='/login']"));
+        driver.findElement(By.xpath("//a[@class='navigation-link'][@href='/login']"));
+
+        //driver.findElement(By.cssSelector(".logo>img"));
+        driver.findElement(By.xpath("//*[@class='logo']/img"));
+
+        //driver.findElement(By.cssSelector(".feedback-card .feedback-date"));
+        driver.findElement(By.xpath("//*[@class='feedback-card']//*[@class='feedback-date']"));
+
+    }
+
+    //cssSelector -> div>a     xPath -> //div/a
+    //cssSelector -> div a     xPath -> //div//a
+
+
+
 
 
     @AfterMethod(enabled = true)
